@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import { BookOpen, Monitor, Users, Sparkles, Phone, Quote } from "lucide-react";
 import heroStudents from "@/assets/hero-students.jpg";
 import bookPreview from "@/assets/book-preview.jpg";
+import bookSamplePagesPdf from "@/assets/book-sample-pages.pdf";
 import parentsKids from "@/assets/parents-kids.jpg";
 import epicEvent from "@/assets/epic-event.jpg";
 import { PowerUpCard } from "@/components/PowerUpCard";
@@ -119,7 +120,19 @@ export function LandingPage() {
 
             {/* Big "13" gaming-style */}
             <div className="lg:col-span-5">
-              <div className="relative mx-auto aspect-square max-w-md">
+              <div
+                className="relative mx-auto aspect-square max-w-md cursor-pointer"
+                role="button"
+                tabIndex={0}
+                aria-label="פתח את קובץ עמודי הדוגמה של הספר"
+                onClick={() => window.open(bookSamplePagesPdf, "_blank", "noopener,noreferrer")}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    window.open(bookSamplePagesPdf, "_blank", "noopener,noreferrer");
+                  }
+                }}
+              >
                 <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-cyan blur-3xl opacity-40 animate-pulse-glow" />
                 <div className="relative flex h-full items-center justify-center rounded-[2.5rem] border-2 border-accent/30 bg-primary/40 backdrop-blur-sm">
                   <div className="text-center">
@@ -127,7 +140,7 @@ export function LandingPage() {
                       13
                     </div>
                     <div className="mt-2 font-mono-display text-sm uppercase tracking-[0.4em] text-primary-foreground/70">
-                      Be the Player
+                      מסע לימוד משותף לקראת בר המצווה
                     </div>
                   </div>
                 </div>
