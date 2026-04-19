@@ -4,6 +4,7 @@ import { BookOpen, Monitor, Users, Sparkles, Phone, Quote } from "lucide-react";
 import heroStudents from "@/assets/hero-students.jpg";
 import bookPreview from "@/assets/book-preview.jpg";
 import bookSamplePagesPdf from "@/assets/book-sample-pages.pdf";
+import bookContentCover from "@/assets/book-content-cover.png";
 import parentsKids from "@/assets/parents-kids.jpg";
 import epicEvent from "@/assets/epic-event.jpg";
 import { PowerUpCard } from "@/components/PowerUpCard";
@@ -134,7 +135,12 @@ export function LandingPage() {
                 }}
               >
                 <div className="absolute inset-0 rounded-[2.5rem] bg-gradient-cyan blur-3xl opacity-40 animate-pulse-glow" />
-                <div className="relative flex h-full items-center justify-center rounded-[2.5rem] border-2 border-accent/30 bg-primary/40 backdrop-blur-sm">
+                <div
+                  className="relative flex h-full items-center justify-center rounded-[2.5rem] border-2 border-accent/30 bg-cover bg-center backdrop-blur-sm"
+                  style={{
+                    backgroundImage: `linear-gradient(rgba(5, 18, 38, 0.45), rgba(5, 18, 38, 0.45)), url(${bookContentCover})`,
+                  }}
+                >
                   <div className="text-center">
                     <div className="font-mono-display text-[14rem] leading-none tracking-tight text-accent drop-shadow-[0_0_40px_rgba(120,200,255,0.6)]">
                       13
